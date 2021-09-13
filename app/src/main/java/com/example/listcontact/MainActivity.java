@@ -13,13 +13,14 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.example.listcontact.R;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private ListView list;
-    private Button FBAgregar;
+    private FloatingActionButton FBAgregar;
     private String[] nombres = {"Luis", "Holger", "Pedro"};
 
 
@@ -28,15 +29,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        FBAgregar = (Button)findViewById(R.id.fabBtonAgregar);
-        FBAgregar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this, Registro.class);
-                startActivity(i);
+        //CONFIGURAR PROYECTO - PROBLEMA BOTON CON ERROR:
+        FBAgregar = (FloatingActionButton) findViewById(R.id.fabBtonAgregar);
+        FBAgregar.setOnClickListener(this);
 
-            }
-        });
 
 
         list = (ListView) findViewById(R.id.listView);
@@ -101,4 +97,9 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onClick(View v) {
+        Intent i = new Intent(MainActivity.this, Registro.class);
+        startActivity(i);
+    }
 }
