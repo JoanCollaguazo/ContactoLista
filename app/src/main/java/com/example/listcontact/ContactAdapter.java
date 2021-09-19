@@ -7,11 +7,10 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.example.listcontact.databases.Contact;
 
-import java.util.ArrayList;
 import java.util.List;
 
 

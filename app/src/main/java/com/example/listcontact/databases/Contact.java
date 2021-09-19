@@ -1,18 +1,51 @@
-package com.example.listcontact;
+package com.example.listcontact.databases;
 
 import android.widget.Toast;
 
 import java.lang.reflect.Array;
 
+import androidx.annotation.NonNull;
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
+@Entity(tableName = "contacto")
+
 public class Contact {
+    @PrimaryKey(autoGenerate = true)
+    @NonNull
+    private int id;
+
+    @ColumnInfo(name = "nombre")
     private String nombre;
+
+    @ColumnInfo(name = "apellido")
     private String apellido;
+
+    @ColumnInfo(name = "email")
     private String email;
+
+    @ColumnInfo(name = "telefono")
     private String telefono;
+
+    @ColumnInfo(name = "url")
     private String url;
-    private  String ciudad;
+
+    @ColumnInfo(name = "ciudad")
+    private String ciudad;
+
+    @ColumnInfo(name = "descripcion")
     private String descripcion;
 
+
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getNombre() {
         return nombre;

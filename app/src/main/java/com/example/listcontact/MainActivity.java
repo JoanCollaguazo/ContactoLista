@@ -2,17 +2,15 @@ package com.example.listcontact;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.example.listcontact.R;
+import com.example.listcontact.databases.Contact;
+import com.example.listcontact.databases.ContactLab;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
@@ -22,6 +20,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private ListView list;
     private FloatingActionButton FBAgregar;
     private String[] nombres = {"Luis", "Holger", "Pedro"};
+    private ContactLab contactoLab;
 
 
     @Override
@@ -38,9 +37,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         list = (ListView) findViewById(R.id.listView);
         // ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.activity_list_item, nombres);
         ArrayList<Contact> listContact = new ArrayList<Contact>();
-        llenarDatos(listContact);
+
+        llenarDatosBD(listContact);
+        //ERROR:
+        if(listContact.equals(null)){
+
+
+
+        }else{
+
+        }
+
         ContactAdapter adapter = new ContactAdapter(this,listContact);
         list.setAdapter(adapter);
+
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -63,7 +73,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
     }
-    private void llenarDatos(ArrayList<Contact> list){
+    private void llenarDatosCodigo(ArrayList<Contact> list){
         Contact contacto1 = new Contact();
         contacto1.setNombre("Joan");
         contacto1.setApellido("Collaguazo");
@@ -94,7 +104,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         contacto3.setDescripcion("Diseñador Grafico");
         list.add(contacto3);
 
-
     }
 
     @Override
@@ -102,4 +111,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Intent i = new Intent(MainActivity.this, Registro.class);
         startActivity(i);
     }
+    private void llenarDatosBD(ArrayList<Contact> list){
+        list.clear();
+        //ERROR:
+        if(contactoLab.getContactos().equals(null)){
+
+        }else {
+            list.addAll(contactoLab.getContactos());
+        }
+    }
+
 }

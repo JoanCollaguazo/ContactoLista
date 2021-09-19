@@ -33,22 +33,15 @@
             android:textSize="16dp"
             android:textStyle="bold" />
 
-        <TextView
+        <EditText
 
-            android:id="@+id/nombre"
+            android:id="@+id/textNombre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="4dp"
             android:paddingTop="20dp"
             android:textSize="16dp" />
 
-        <View
-
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="3dp"
-            android:layout_marginBottom="3dp"
-            android:background="@android:color/darker_gray" />
 
         <TextView
 
@@ -60,22 +53,15 @@
             android:textSize="16dp"
             android:textStyle="bold" />
 
-        <TextView
+        <EditText
 
-            android:id="@+id/apellidos"
+            android:id="@+id/textApellidos"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="4dp"
             android:paddingTop="20dp"
             android:textSize="16dp" />
 
-        <View
-
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="3dp"
-            android:layout_marginBottom="3dp"
-            android:background="@android:color/darker_gray" />
 
         <TextView
 
@@ -87,22 +73,14 @@
             android:textSize="16dp"
             android:textStyle="bold" />
 
-        <TextView
-
-            android:id="@+id/ciudad"
+        <EditText
+            android:id="@+id/textCiudad"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="4dp"
             android:paddingTop="20dp"
             android:textSize="16dp" />
 
-        <View
-
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="3dp"
-            android:layout_marginBottom="3dp"
-            android:background="@android:color/darker_gray" />
 
         <TextView
 
@@ -114,22 +92,15 @@
             android:textSize="16dp"
             android:textStyle="bold" />
 
-        <TextView
+        <EditText
 
-            android:id="@+id/descripcion"
+            android:id="@+id/textDescripcion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="4dp"
             android:textSize="16dp"
             android:paddingTop="20dp" />
 
-        <View
-
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="3dp"
-            android:layout_marginBottom="3dp"
-            android:background="@android:color/darker_gray" />
 
         <TextView
 
@@ -141,9 +112,9 @@
             android:textSize="16dp"
             android:textStyle="bold" />
 
-        <TextView
+        <EditText
 
-            android:id="@+id/telefono"
+            android:id="@+id/textTelefono"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="4dp"
